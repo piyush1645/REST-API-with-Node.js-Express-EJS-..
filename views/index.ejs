@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thread</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+    <h2>WELCOME TO THREAD</h2>
+    <div class="background">
+        <%for(p of post){%>
+            <div class="person">
+                <h3>ID :<%= p.id %>
+                </h3>
+                <h4>@USERNAME : <%= p.username%>
+                </h4>
+                <h3>CONTENT : <%= p.content %>
+                </h3>
+                <a href="/post/<%=p.id%>/edit">update</a>
+                <a href="/post/<%=p.id%>/show">show</a>
+                <form method="post" action="/post/<%=p.id%>?_method=DELETE">
+                    <button>delete post</button>
+                </form>
+            </div>
+            <%}%>
+    </div>
+    <br>
+    <br>
+    <a href="/post/new">new THREAD</a>
+
+</body>
+
+</html>
